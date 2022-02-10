@@ -161,7 +161,7 @@ Spring Boot 어플리케이션에서 security filter는 ApplicationContext의 @B
 사실 security filter에는 다음과 같은 간접 계층이 하나 더 있다.
 이것은 일반적으로 DelegatingFilterProxy로 컨테이너 안에 설치되며 Spring @Bean일 필요는 없다.
 이 Proxy는 항상 @Bean이고 springSecurityFilterChain 라는 고정된 이름을 사용하는  FilterChainProxy에게 위임한다.
-FilterChainProxy는 필터 또는 체인의 체인으로 내부적으로 배열된 모든 security login을 포함한다.
+FilterChainProxy는 필터 또는 체인의 체인으로 내부적으로 배열된 모든 security logic을 포함한다.
 모든 필터들은 같은 API를 가지며(그들은 모두 Filter 인터페이스를 구현한다.) 그들은 모두 체인의 나머지를 거절할수 있다.
 Spring Security filter는 필터 체인들의 리스트를 포함하고 요청과 매치되는 첫번째 체인에 요청을 보낸다. 다음 사진은 요청 경로(/foo/**) 매칭을 기반으로 dispatch가 발생하는것을 보여준다.
 이것은 매우 흔한 방법이지만 요청을 매칭하는 유일한 방법은 아니다.
